@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+  <title>Responsive NavBar</title>
+</head>
+<body>
+  <header>
+    <nav class="nav">
+      <div class="logo">
+        <img src="./img/logo.png">
+      </div>
+      <div class="nav-menu">
+        <ul>
+          <li><a class="nav-link" href="">Features</a></li>
+          <li><a class="nav-link" href="">Operations</a></li>
+          <li><a class="nav-link" href="">Testimonials</a></li>
+        </ul>
+        <button class="open-btn nav-link">Open account</button>
+      </div>
+    </nav>
+    <span class="material-symbols-outlined open-menu">
+      menu
+    </span>
+    <div class="mobile-menu hidden">
+      <span class="material-symbols-outlined close-menu">
+        close
+      </span>
+      <ul>
+        <li><a href="">Features</a></li>
+        <li><a href="">Operations</a></li>
+        <li><a href="">Testimonials</a></li>
+      <button class="open-btn">Open account</button>
+      </ul>
+    </div>
+  </header>
+
+  <script src="./script.js"></script>
+</body>
+</html>
