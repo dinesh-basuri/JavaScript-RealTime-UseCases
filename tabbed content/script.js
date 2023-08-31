@@ -31,29 +31,6 @@ nav.addEventListener('mouseout',function(e){
   }
 })
 
-// navigation scrolling
-document.querySelector('.nav-links').addEventListener('click',function(e){
-  e.preventDefault();
-
-  if(e.target.classList.contains('nav-link')){
-    const id = e.target.getAttribute('href');
-    document.querySelector(id).scrollIntoView({behavior: 'smooth'});
-  }
-})
-
-/* - old method, not efficient one
-const navMenu = document.querySelectorAll('.nav-link');
-
-navMenu.forEach((el)=>{
-  el.addEventListener('click',function(e){
-    e.preventDefault();
-
-    const id = this.getAttribute('href');
-    document.querySelector(id).scrollIntoView({behavior: 'smooth'});
-  })
-})
-*/
-
 // login page opening
 const openWindow = document.querySelector('.open-btn');
 const closeWindow = document.querySelector('.close-btn');
@@ -73,4 +50,21 @@ document.addEventListener('keydown',function(e){
   if(e.key === 'Escape') {
     openClose();
   }
+})
+
+//Tabbed content
+const tabsContainer = document.querySelector('.tabs');
+const tabs = document.querySelectorAll('.tab');
+const tabContent = document.querySelectorAll('.tab-content');
+
+tabsContainer.addEventListener('click',function(e){
+  const click = e.target.closest('.tab');
+
+  if(!click) return;
+
+  tabs.forEach(t => t.classList.remove('scrollUp'));
+  tabContent.forEach(el => el.classList.remove('active'));
+
+  click.classList.add('scrollUp');
+  document.querySelector(`.content-${click.dataset.tab}`).classList.add('active');
 })
